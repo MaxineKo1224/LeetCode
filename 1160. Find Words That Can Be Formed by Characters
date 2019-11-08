@@ -85,3 +85,4 @@ public:
 // 엄청 쉬운 문제였는데 쩔쩔 매다가 못풀었다
 // included = true , bool match = true -> 이걸 활용하는 법을 잘 알아야 하는거 같다.
 //다음부턴 내 코드도 지우지 말고 같이 올려서 비교해서 봐야지! 
+//C++ 에서 for(auto ch : chars) 이런 문법에 대해서 새로 배웠다. python의 for i in words 와 같은 표현
