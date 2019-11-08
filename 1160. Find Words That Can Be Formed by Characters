@@ -1,0 +1,87 @@
+# python code
+class Solution(object):
+    def countCharacters(self, words, chars):
+        count = 0
+        for i in words:
+            included = True
+            charlist = [c for c in chars]
+            
+            for j in i:
+                if j in charlist:
+                    charlist.remove(j)
+                else:
+                    included = False
+                    break
+            
+            if included : count = count + len(i)
+                
+        return count
+        
+        
+        
+ 
+//C++ code (1)
+class Solution {
+public:
+    int countCharacters(vector<string>& words, string chars) {
+        int sum = 0;
+        for(auto i : words)
+        {
+            int count = 0;
+            string temp = chars;
+            for(int a = 0; a<i.size(); a++)
+            {
+                auto it = temp.begin();
+                for(int x = 0; x<temp.size(); x++)
+                {
+                    
+                    if(i[a] == temp[x])
+                    {
+                        temp.erase(it);
+                        count++;
+                        break;
+                    }    
+                    it++;
+                }
+                if(count == i.size())
+                {
+                    sum += i.size();
+                }
+            }
+        }
+        
+        return sum;  
+     }
+};
+
+
+//C++ code(2)
+class Solution {
+public:
+    int countCharacters(vector<string>& words, string chars, int res =0)
+    {
+        vector<int> cnt(26);
+        for(auto ch : chars) ++cnt[ch - 'a'];
+        
+        for(auto w : words)
+        {
+            vector<int> cnt1 = cnt;
+            bool match = true;
+            
+            for(auto ch : w)
+            {
+                if(--cnt1[ch-'a'] < 0)
+                {
+                    match = false;
+                    break;
+                }
+            }
+            if(match) res += w.size();
+        }
+        return res;
+    }
+
+
+// 엄청 쉬운 문제였는데 쩔쩔 매다가 못풀었다
+// included = true , bool match = true -> 이걸 활용하는 법을 잘 알아야 하는거 같다.
+//다음부턴 내 코드도 지우지 말고 같이 올려서 비교해서 봐야지! 
