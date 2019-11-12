@@ -5,9 +5,9 @@ python에는 issubset 이라는 함수가 있다.
 def findWords(self, words: List[str]) -> List[str]:
 	r, res = ["qwertyuiop","asdfghjkl","zxcvbnm"], []    
 	for word1 in words:
-      word = set(word1.lower())
-		  if word.issubset(r[0]) or word.issubset(r[1]) or word.issubset(r[2]): # issubset - True if all chars
-          res.append(word1)
+            word = set(word1.lower())
+	        if word.issubset(r[0]) or word.issubset(r[1]) or word.issubset(r[2]): 
+                    res.append(word1)
 	return res
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 그리고 기호로는 <= 이런식으로 나타내는듯.
@@ -35,16 +35,16 @@ public:
 		vector<int> dict(26);
 		vector<string> rows = {"QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"};
 		for(int i = 0; i<rows.size(); i++){
-			for(auto c : rows[i]) dict[c-'A'] = 1 << i;
+		    for(auto c : rows[i]) dict[c-'A'] = 1 << i;
 		}
 		vector<string> res;
 		for(auto w : words){
-			int r = 7;
-			for(auto c : w){
-				r &= dict[toupper(c) - 'A'];
-				if(r == 0) break;
-			}
-			if(r) res.push_back(w);
+		    int r = 7;
+		    for(auto c : w){
+		        r &= dict[toupper(c) - 'A'];
+			if(r == 0) break;
+		    }
+		    if(r) res.push_back(w);
 		}
 		
 		return res;
