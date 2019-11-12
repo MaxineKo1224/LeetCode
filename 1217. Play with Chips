@@ -1,0 +1,23 @@
+문제가 도무지 이해가 안갔던 문제..
+Discuss보니까 나만 그런건 아니었던거 같다.
+코드를 봐도 문제의 의도가 뭐였나 여전히 모르겠다.
+짝수,홀수를 세서 더 수가 적은걸 return 하는 문제인가?
+근데 문제 Description은..
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+class Solution {
+public:
+    int minCostToMoveChips(vector<int>& chips) {
+        int n = chips.size();
+        int even = 0;
+        int odd = 0;
+        for(int i = 0; i<n; i++){
+            if(chips[i]%2 == 0) even++;
+            else odd++;
+            
+            
+        }
+        return min(even, odd);
+    }
+};
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
