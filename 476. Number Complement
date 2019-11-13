@@ -1,0 +1,100 @@
+이진법, 십진법 변환을 알아야 풀수 있을거 같아서
+이 부분에 대해서 먼저 구글링을 해보았다.
++++++++++++++++++++++++++++++++++++++++
+int tenConvertTwo(int num)
+{
+    int result = 0;
+    for(int i = 1; num>0; i*=10){
+        int binary = num % 2 ;
+        result += i * binary;
+        num /= 2;
+    }
+    return result;
+}
++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++
+int twoConvertTem(int num)
+{
+    int result = 0, mul = 1;
+    while(num>0)
+    {
+        if(num%2)
+            result += mul;
+        mul *= 2;
+        num /= 10;
+    }
+    return result;
+}
++++++++++++++++++++++++++++++++++++++++
+
+//당연히 말도 안되는 내 코드 ~~
+//ㅠ__ㅠ
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+class Solution {
+public:
+    int findComplement(int num) {          
+        int tenConvertTwo(int num){
+            int result = 0;
+            for(int i = 1; num>0; i *= 10){
+                int binary = num % 2;
+                result += binary * i;
+                num /= 2;
+            }
+            return result;
+        }
+        int twoConvertTen(int result){
+            int result = 0, mul = 1;
+            while(num>0){
+                if(num%2)
+                    result += mul;
+                mul *= 2;
+                num /= 10;
+            }
+            return result;
+        } 
+    tenConvertTwo(num);        
+    return towConvertTen(result);
+    }
+    
+};
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//Bitwise NOT 공부도 하고 
+// >> 랑 << 이거 공부도 더 했다.
+//재밌는듯ㅋ
+
+class Solution{
+public:
+    int findComplement(int num){
+        unsigned mask = ~0;
+        while (num & mask) mask <<= 1;
+        return ~mask & ~num;
+    }
+};
+
+//해괴하다 해괴해...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
