@@ -1,4 +1,4 @@
-//https://leetcode.com/problems/last-stone-weight/
+https://leetcode.com/problems/last-stone-weight/
 
 //priority queue 지식이 필요했던 문제.
 //우선순위 큐는 insert된 원소 순서에 상관 없이 우선순위가 높은 데이터가 먼저 return 된다
