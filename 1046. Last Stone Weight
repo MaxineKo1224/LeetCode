@@ -1,0 +1,27 @@
+//priority queue 지식이 필요했던 문제.
+//우선순위 큐는 insert된 원소 순서에 상관 없이 우선순위가 높은 데이터가 먼저 return 된다
+//(병원 응급실을 예로 생각하면 된다. 누가 먼저 왔는지에 상관없이 더 위급한 환자가 제일 먼저 치료 대상이 된다.)
+//https://en.cppreference.com/w/cpp/container/priority_queue 이 사이트에서 사용법을 봤다.
+//top : accesses the top element 라고 돼있었다. ???? 정확히 무슨 의민지 모르겠다. 
+//이 문제에선 top()함수가 제일 큰 수를 return 해줘야 알고리즘이 정상작동함 (python의 max()함수처럼..) 
+//pop():removes the top element 
+//참조된 top()원소를 삭제하는거 같다
+//void.push 원소를 삽입 push_back()처럼 쓰이는듯
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+class Solution {
+public:
+    int lastStoneWeight(vector<int>& stones){
+        priority_queue<int> q(stones.begin(), stones.end());
+        while(q.size() > 1){
+            int q1 = q.top(); q.pop();
+            int q2 = q.top(); q.pop();
+            if(q1 - q2 > 0) q.push(q1-q2);
+        }
+        return q.empty() ? 0 : q.top();
+    }
+};
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//역시 자료구조 공부는 재밌다 ><
+//그러나..난 이 문제를 보고 priority queue를 써야 된다는걸 솔직히 캐치 못했다 ㅡㅡ;;;;;; 
